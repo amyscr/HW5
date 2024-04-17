@@ -54,3 +54,51 @@ using namespace std;
                 return NULL;
         }
     }
+
+    //mylist functions below
+    template<class T>
+    MyList<T>::MyList(){}
+    
+    template<class T>
+    void MyList<T>::insertHead(T theData)
+    {
+        head = new Node<T>(theData, head);
+    }
+    
+    template<class T>
+    T MyList<T>::deleteHead()
+    {
+        Node<T> *deleted;
+        deleted = head;
+        head = head->link;
+        delete deleted;
+    }
+    
+    template<class T>
+    bool MyList<T>::search(T &target)
+    {
+        Node<T> *current = head;
+        if (current == NULL)
+        {
+            return NULL;
+        }
+        else
+        {
+            while((current->link != NULL)&&(current->data != target))
+            {
+                current = current->link;
+            }
+            if(current->data == target)
+            {
+                return current;
+            }
+            else
+                return NULL;
+        }
+    }
+    
+    template<class T>
+    void MyList<T>::display()
+    {
+        
+    }
