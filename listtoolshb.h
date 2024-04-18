@@ -1,6 +1,10 @@
 #ifndef LISTTOOLS_H
 #define LISTTOOLS_H
 
+
+template <class T>
+class MyList;
+
     template< class T >
     class Node {
     public:
@@ -10,9 +14,10 @@
         const T& getData( ) const { return data; }
         void setData(const T& theData) { data = theData; }
         void setLink(Node<T>* pointer) { link = pointer; }
-        
+
         //might need to include new template
-        friend class MyList();
+        template<class U>
+        friend class MyList;
     private:
         T data;
         Node<T> *link;
@@ -24,18 +29,19 @@
     template<class T> void deleteFirstNode(Node<T>*& head);
     template<class T> Node<T>* search(Node<T>* head, const T& target);
     template<class T> void display (Node<T>* head);
-    
-    template<class T>
+
+
+template<class T>
     class MyList
     {
     public:
         MyList();
-        
+
         void insertHead(T theData);
         T deleteHead();
         bool search(T &target);
         void display();
-        
+
     private:
         Node<T> *head;
     };
