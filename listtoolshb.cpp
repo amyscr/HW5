@@ -100,5 +100,10 @@ using namespace std;
     template<class T>
     void MyList<T>::display()
     {
-        
+        Node <T> *temp = head;
+        while(temp != NULL)
+        {
+            cout<<temp->data<<endl;
+            temp = temp->link;
+        }
     }
