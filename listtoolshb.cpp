@@ -58,13 +58,13 @@ using namespace std;
     //mylist functions below
     template<class T>
     MyList<T>::MyList(){}
-    
+
     template<class T>
     void MyList<T>::insertHead(T theData)
     {
         head = new Node<T>(theData, head);
     }
-    
+
     template<class T>
     T MyList<T>::deleteHead()
     {
@@ -73,7 +73,7 @@ using namespace std;
         head = head->link;
         delete deleted;
     }
-    
+
     template<class T>
     bool MyList<T>::search(T &target)
     {
@@ -96,7 +96,7 @@ using namespace std;
                 return NULL;
         }
     }
-    
+
     template<class T>
     void MyList<T>::display()
     {
